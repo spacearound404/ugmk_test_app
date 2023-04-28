@@ -1,33 +1,26 @@
 <h1 align="center">УГМК Тестовое Приложение</h1>
 
-
 <div align="center">
 
 Анализ данных
-
 
 [![Build Status](https://badgen.net/github/status/kelektiv/node-cron?icon=github)](https://badgen.net/github/status/kelektiv/node-cron)
 [![Build Checks](https://badgen.net/github/checks/kelektiv/node-cron?icon=github)](https://badgen.net/github/checks/kelektiv/node-cron)
 [![Minified size](https://badgen.net/bundlephobia/min/cron)](https://badgen.net/bundlephobia/min/cron)
 [![Minzipped size](https://badgen.net/bundlephobia/minzip/cron)](https://badgen.net/bundlephobia/minzip/cron)
- 
-
-
 
 </div>
-<hr/>
 Это проект, разработанный с использованием React, который включает в себя приложение и сервер. Приложение отображает график производства двух типов продукции на двух фабриках по месяцам с возможностью фильтрации и отображает круговую диаграмму суммарного производства по каждому типу продукции на странице деталей.
 
 <div align="center">
 
-![Пример картинки](images/main.png)
+![Пример картинки](./images/main.png)
 
-![Пример картинки](images/details.png)
+![Пример картинки](./images/details.png)
 
 </div>
 
 ## Установка и запуск
-<hr/>
 
 ### Установка зависимостей
 
@@ -44,7 +37,6 @@
 Приложение будет доступно по адресу: localhost:3000
 
 ## Docker
-<hr/>
 
 ### Создание Docker образа
 
@@ -62,14 +54,12 @@
 После завершения работы приложения контейнер будет автоматически удалён.
 
 ## Сервер
-<hr/>
 
 Сервер предоставляет два эндпоинта:
 - `/products` - возвращает информацию о типах продукции и фабриках по месяцам.
 - `/details/:factoryId/:month` - возвращает сумму всех произведённых товаров одной фабрикой за определённый месяц.
 
 ## Функциональность приложения
-<hr/>
 
 - График, отражающий помесячное количество производимой продукции двух типов двух фабрик.
 - Возможность фильтрации по типу продукции (все, продукт 1, продукт 2).
