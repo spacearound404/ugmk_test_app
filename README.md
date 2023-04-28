@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+<h1 align="center">УГМК Тестовое Приложение</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+Анализ данных
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![Build Status](https://badgen.net/github/status/kelektiv/node-cron?icon=github)](https://badgen.net/github/status/kelektiv/node-cron)
+[![Build Checks](https://badgen.net/github/checks/kelektiv/node-cron?icon=github)](https://badgen.net/github/checks/kelektiv/node-cron)
+[![Dependency Status](https://badgen.net/david/dep/kelektiv/node-cron)](https://badgen.net/david/dev/kelektiv/node-cron)
+[![Code Coverage](https://badgen.net/codecov/c/github/kelektiv/node-cron?icon=codecov)](https://badgen.net/codecov/c/github/kelektiv/node-cron)
+[![Known Vulnerabilities](https://snyk.io/test/github/kelektiv/node-cron/badge.svg)](https://snyk.io/test/github/kelektiv/node-cron)
+[![Minified size](https://badgen.net/bundlephobia/min/cron)](https://badgen.net/bundlephobia/min/cron)
+[![Minzipped size](https://badgen.net/bundlephobia/minzip/cron)](https://badgen.net/bundlephobia/minzip/cron)
+ 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</div>
+<hr/>
+Это проект, разработанный с использованием React, который включает в себя приложение и сервер. Приложение отображает график производства двух типов продукции на двух фабриках по месяцам с возможностью фильтрации и отображает круговую диаграмму суммарного производства по каждому типу продукции на странице деталей.
 
-### `npm run build`
+<div align="center">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Пример картинки](images/main.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Пример картинки](images/details.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</div>
 
-### `npm run eject`
+## Установка и запуск
+<hr/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Установка зависимостей
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Для установки всех необходимых зависимостей выполните следующую команду:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm install`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Запуск приложения
 
-## Learn More
+Чтобы запустить приложение на локальной машине, выполните следующую команду:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm run start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Приложение будет доступно по адресу: localhost:3000
 
-### Code Splitting
+## Docker
+<hr/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Создание Docker образа
 
-### Analyzing the Bundle Size
+Для создания Docker образа с именем ugmk_test_app выполните следующую команду:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`npm run dockerize`
 
-### Making a Progressive Web App
+### Запуск контейнера
+Для запуска контейнера с именем ugmk_test_app выполните следующую команду:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`npm run start-container`
 
-### Advanced Configuration
+Приложение будет доступно по адресу: localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+После завершения работы приложения контейнер будет автоматически удалён.
 
-### Deployment
+## Сервер
+<hr/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Сервер предоставляет два эндпоинта:
+- `/products` - возвращает информацию о типах продукции и фабриках по месяцам.
+- `/details/:factoryId/:month` - возвращает сумму всех произведённых товаров одной фабрикой за определённый месяц.
 
-### `npm run build` fails to minify
+## Функциональность приложения
+<hr/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- График, отражающий помесячное количество производимой продукции двух типов двух фабрик.
+- Возможность фильтрации по типу продукции (все, продукт 1, продукт 2).
+- При нажатии на определённую колонку графика открывается страница с круговой диаграммой, показывающей суммарное производство каждого типа продуктов для выбранной фабрики.
